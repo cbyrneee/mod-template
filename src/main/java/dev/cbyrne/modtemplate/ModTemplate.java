@@ -2,8 +2,6 @@ package dev.cbyrne.modtemplate;
 
 import com.mojang.logging.LogUtils;
 import dev.cbyrne.modtemplate.config.Configuration;
-import me.shedaniel.autoconfig.AutoConfig;
-import me.shedaniel.autoconfig.serializer.GsonConfigSerializer;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 
@@ -12,7 +10,7 @@ public class ModTemplate implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        AutoConfig.register(Configuration.class, GsonConfigSerializer::new);
-        LOGGER.info("ModTemplate is " + (Configuration.getInstance().enabled ? "enabled" : "disabled"));
+        var enabled = Configuration.getInstance().enabled;
+        LOGGER.info("ModTemplate is " + (enabled ? "enabled" : "disabled"));
     }
 }
