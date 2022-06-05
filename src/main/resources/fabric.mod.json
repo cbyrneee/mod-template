@@ -1,0 +1,38 @@
+{
+    "schemaVersion": 1,
+    "id": "mod-template",
+    "version": "${version}",
+    "name": "ModTemplate",
+    "description": "An example mod",
+    "authors": [
+        "Conor Byrne"
+    ],
+    "contact": {
+        "email": "hello@cbyrne.dev",
+        "sources": "https://github.com/cbyrneee/mod-template",
+        "homepage": "https://cbyrne.dev",
+        "issues": "https://github.com/cbyrneee/mod-template/issues"
+    },
+    "license": "MIT",
+    "icon": "assets/modtemplate/icon.png",
+    "environment": "client",
+    "entrypoints": {
+        "main": [
+            "dev.cbyrne.modtemplate.ModTemplate"
+        ],
+        "modmenu": [
+            "dev.cbyrne.modtemplate.modmenu.ModMenuImpl"
+        ]
+    },
+    "mixins": [
+        "modtemplate.mixins.json"
+    ],
+    "depends": {
+        "fabricloader": ">=0.14.6",
+        "minecraft": "1.19.x",
+        "cloth-config": ">=7.0.65"
+    },
+    "suggests": {
+        "modmenu": ">=3.0.1"
+    }
+}
